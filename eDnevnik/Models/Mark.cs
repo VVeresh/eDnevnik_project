@@ -18,5 +18,7 @@ namespace eDnevnik.Models
         public Marks MarkValue { get; set; }
 
         public Semesters Semester { get; set; }
+        
+        public DateTime Created { get; set; } = DateTime.UtcNow;
     }
 }

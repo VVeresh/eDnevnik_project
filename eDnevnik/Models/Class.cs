@@ -17,8 +17,8 @@ namespace eDnevnik.Models
 
         public Teacher HomeroomTeacher { get; set; }
 
-        public ICollection<Subject> Subjects { get; set; }        
+        public virtual ICollection<Subject> Subjects { get; set; }        
 
-        public ICollection<Pupil> Pupils { get; set; }
+        public virtual ICollection<Pupil> Pupils { get; set; }
     }
 }
