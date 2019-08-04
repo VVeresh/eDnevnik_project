@@ -10,5 +10,7 @@ namespace eDnevnik.Models
         public string PupilName { get; set; }
 
         public string PupilSurname { get; set; }
+
+        public ICollection<Mark> Marks { get; set; }
     }
 }

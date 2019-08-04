@@ -38,6 +38,9 @@ namespace eDnevnik.Repositories
         [Dependency]
         public IGenericRepository<Teacher> TeachersRepository { get; set; }
 
+        [Dependency]
+        public IGenericRepository<Class> ClassesRepository { get; set; }
+
         public void Save()
         {
             context.SaveChanges();

@@ -57,9 +57,10 @@ namespace eDnevnik
             container.RegisterType<IGenericRepository<Admin>, GenericRepository<Admin>>();
             container.RegisterType<IGenericRepository<Mark>, GenericRepository<Mark>>();
             container.RegisterType<IGenericRepository<Parent>, GenericRepository<Parent>>();
-            container.RegisterType <IGenericRepository <Pupil>, GenericRepository<Pupil>>();
+            container.RegisterType <IGenericRepository<Pupil>, GenericRepository<Pupil>>();
             container.RegisterType<IGenericRepository<Subject>, GenericRepository<Subject>>();
-            container.RegisterType<IGenericRepository<Teacher>, GenericRepository<Teacher>>();            
+            container.RegisterType<IGenericRepository<Teacher>, GenericRepository<Teacher>>();
+            container.RegisterType<IGenericRepository<Class>, GenericRepository<Class>>();
 
             httpConfiguration.DependencyResolver = new UnityDependencyResolver(container);
         }

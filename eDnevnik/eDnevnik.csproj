@@ -144,6 +144,7 @@
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Infrastructure\AuthContext.cs" />
     <Compile Include="Models\Admin.cs" />
+    <Compile Include="Models\Class.cs" />
     <Compile Include="Models\DataAccessContext.cs" />
     <Compile Include="Models\DTOs\UserDTO.cs" />
     <Compile Include="Models\Mark.cs" />

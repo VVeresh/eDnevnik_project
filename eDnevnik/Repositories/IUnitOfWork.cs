@@ -15,6 +15,7 @@ namespace eDnevnik.Repositories
         IGenericRepository<Pupil> PupilsRepository { get; set; }
         IGenericRepository<Subject> SubjectsRepository { get; set; }
         IGenericRepository<Teacher> TeachersRepository { get; set; }
+        IGenericRepository<Class> ClassesRepository { get; set; }
 
         void Save();
     }

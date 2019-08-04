@@ -9,6 +9,6 @@ namespace eDnevnik.Models
     {
         public string TeacherName { get; set; }
 
-        public string TeacherSurname { get; set; }
+        public string TeacherSurname { get; set; }   
     }
 }

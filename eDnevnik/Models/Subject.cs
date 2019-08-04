@@ -12,5 +12,7 @@ namespace eDnevnik.Models
         public string SubjectName { get; set; }
 
         public int FundOfClasses { get; set; }
+
+        public Teacher Teacher { get; set; }
     }
 }
