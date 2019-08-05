@@ -10,6 +10,7 @@ using Newtonsoft.Json;
 using Microsoft.Owin.Testing;
 using System.Threading.Tasks;
 using System.Net.Http;
+using eDnevnik.Infrastructure;
 
 namespace eDnevnik.Tests.Controllers
 {
@@ -23,7 +24,7 @@ namespace eDnevnik.Tests.Controllers
 
         private UnitOfWork GetUnitOfWork()
         {
-            DataAccessContext dac = new DataAccessContext();
+            DataAccessContext dac = new DataAccessContext();            
             UnitOfWork db = new UnitOfWork(dac);            
             db.UsersRepository = new GenericRepository<User>(dac);
 

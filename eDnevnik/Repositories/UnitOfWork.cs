@@ -1,4 +1,5 @@
 ﻿using eDnevnik.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -10,9 +11,9 @@ namespace eDnevnik.Repositories
 {
     public class UnitOfWork : IUnitOfWork, IDisposable
     {
-        private DbContext context;
+        private DbContext context;      
 
-        public UnitOfWork(DbContext context)
+        public UnitOfWork(DbContext context)        
         {
             this.context = context;
         }

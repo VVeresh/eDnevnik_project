@@ -20,5 +20,6 @@ namespace eDnevnik.Models
         public DbSet<Pupil> Pupils { get; set; }
         public DbSet<Subject> Subjects { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
+        public DbSet<Class> Classes { get; set; }
     }
 }

@@ -41,6 +41,30 @@ namespace eDnevnik.Repositories
             return result;
         }
 
+        public async Task<IdentityResult> RegisterTeacherUser(TeacherDTO userModel)
+        {
+            IdentityUser user = new IdentityUser { UserName = userModel.UserName };
+            var result = await _userManager.CreateAsync(user, userModel.Password);
+            _userManager.AddToRole(user.Id, "teachers");
+            return result;
+        }
+
+        public async Task<IdentityResult> RegisterParentUser(ParentDTO userModel)
+        {
+            IdentityUser user = new IdentityUser { UserName = userModel.UserName };
+            var result = await _userManager.CreateAsync(user, userModel.Password);
+            _userManager.AddToRole(user.Id, "parents");
+            return result;
+        }
+
+        public async Task<IdentityResult> RegisterPupilUser(PupilDTO userModel)
+        {
+            IdentityUser user = new IdentityUser { UserName = userModel.UserName };
+            var result = await _userManager.CreateAsync(user, userModel.Password);
+            _userManager.AddToRole(user.Id, "pupils");
+            return result;
+        }
+
         public async Task<IdentityUser> FindUser(string userName, string password)
         {
             IdentityUser user = await _userManager.FindAsync(userName, password);

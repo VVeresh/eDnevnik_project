@@ -1,6 +1,8 @@
-﻿using eDnevnik.Models;
+﻿using eDnevnik.Infrastructure;
+using eDnevnik.Models;
 using eDnevnik.Providers;
 using eDnevnik.Repositories;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
@@ -51,7 +53,7 @@ namespace eDnevnik
             // it is NOT necessary to register your controllers
 
             // e.g. container.RegisterType<ITestService, TestService>();
-            container.RegisterType<DbContext, DataAccessContext>(new HierarchicalLifetimeManager());
+            container.RegisterType<DbContext, DataAccessContext>(new HierarchicalLifetimeManager());            
             container.RegisterType<IUnitOfWork, UnitOfWork>();
             container.RegisterType<IGenericRepository<User>, GenericRepository<User>>();
             container.RegisterType<IGenericRepository<Admin>, GenericRepository<Admin>>();

@@ -140,12 +140,17 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ClassesController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Infrastructure\AuthContext.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Class.cs" />
     <Compile Include="Models\DataAccessContext.cs" />
+    <Compile Include="Models\DTOs\ClassDTO.cs" />
+    <Compile Include="Models\DTOs\ParentDTO.cs" />
+    <Compile Include="Models\DTOs\PupilDTO.cs" />
+    <Compile Include="Models\DTOs\TeacherDTO.cs" />
     <Compile Include="Models\DTOs\UserDTO.cs" />
     <Compile Include="Models\Mark.cs" />
     <Compile Include="Models\Parent.cs" />
@@ -160,6 +165,8 @@
     <Compile Include="Repositories\IGenericRepository.cs" />
     <Compile Include="Repositories\IUnitOfWork.cs" />
     <Compile Include="Repositories\UnitOfWork.cs" />
+    <Compile Include="Services\ClassesService.cs" />
+    <Compile Include="Services\IClassesService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
