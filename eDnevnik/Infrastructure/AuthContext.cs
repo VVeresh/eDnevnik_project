@@ -8,11 +8,6 @@ using System.Web;
 
 namespace eDnevnik.Infrastructure
 {
-    //public class AuthContext : IdentityDbContext<IdentityUser>
-    //{
-    //    public AuthContext() : base("AuthContext") { }
-    //}
-
     public class AuthContext : IdentityDbContext<IdentityUser>
     {
         public AuthContext() : base("AuthContext")
@@ -24,7 +19,7 @@ namespace eDnevnik.Infrastructure
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<User>().ToTable("Users");            
+            modelBuilder.Entity<User>().ToTable("Users");
             modelBuilder.Entity<Admin>().ToTable("Admins");
             modelBuilder.Entity<Mark>().ToTable("Marks");
             modelBuilder.Entity<Parent>().ToTable("Parents");
@@ -35,8 +30,8 @@ namespace eDnevnik.Infrastructure
             modelBuilder.Entity<TeacherClass>().ToTable("TeacherClasses");
 
         }
+
         public new DbSet<User> Users { get; set; }
-        
         public DbSet<Admin> Admins { get; set; }
         public DbSet<Mark> Marks { get; set; }
         public DbSet<Parent> Parents { get; set; }

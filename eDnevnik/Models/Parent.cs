@@ -9,9 +9,7 @@ namespace eDnevnik.Models
     {
         public string ParentName { get; set; }
 
-        public string ParentSurname { get; set; }
-
-        //public string Email { get; set; }
+        public string ParentSurname { get; set; }        
 
         public virtual ICollection<Pupil> Pupils { get; set; }
     }

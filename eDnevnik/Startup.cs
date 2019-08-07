@@ -3,23 +3,9 @@ using eDnevnik.Models;
 using eDnevnik.Services;
 using eDnevnik.Providers;
 using eDnevnik.Repositories;
-//using Microsoft.AspNet.Identity.EntityFramework;
-//using Microsoft.Owin;
-//using Microsoft.Owin.Security.OAuth;
-//using Owin;
-//using System;
-//using System.Collections.Generic;
-//using System.Data.Entity;
-//using System.Linq;
-//using System.Web;
-//using System.Web.Http;
-//using Unity;
-//using Unity.Lifetime;
-//using Unity.WebApi;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
-
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -84,11 +70,11 @@ namespace eDnevnik
             container.RegisterType<IGenericRepository<Subject>, GenericRepository<Subject>>();
             container.RegisterType<IGenericRepository<Teacher>, GenericRepository<Teacher>>();
             container.RegisterType<IGenericRepository<Class>, GenericRepository<Class>>();
-           
+            container.RegisterType<IGenericRepository<TeacherClass>, GenericRepository<TeacherClass>>();
+
             container.RegisterType<ITeachersService, TeachersService>();
             container.RegisterType<IClassesService, ClassesService>();
-
-            //GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
+            
             return container;
         }
     }
