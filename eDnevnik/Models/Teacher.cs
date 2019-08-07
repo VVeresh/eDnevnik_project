@@ -9,6 +9,10 @@ namespace eDnevnik.Models
     {
         public string TeacherName { get; set; }
 
-        public string TeacherSurname { get; set; }   
+        public string TeacherSurname { get; set; }
+
+        public Subject TeachingSubject { get; set; }
+
+        public virtual ICollection<TeacherClass> TeacherClasses { get; set; }
     }
 }

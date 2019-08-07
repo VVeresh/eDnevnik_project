@@ -24,7 +24,7 @@ namespace eDnevnik.Infrastructure
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<User>().ToTable("Users");
+            modelBuilder.Entity<User>().ToTable("Users");            
             modelBuilder.Entity<Admin>().ToTable("Admins");
             modelBuilder.Entity<Mark>().ToTable("Marks");
             modelBuilder.Entity<Parent>().ToTable("Parents");
@@ -32,15 +32,18 @@ namespace eDnevnik.Infrastructure
             modelBuilder.Entity<Subject>().ToTable("Subjects");
             modelBuilder.Entity<Teacher>().ToTable("Teachers");
             modelBuilder.Entity<Class>().ToTable("Classes");
+            modelBuilder.Entity<TeacherClass>().ToTable("TeacherClasses");
 
         }
         public new DbSet<User> Users { get; set; }
+        
         public DbSet<Admin> Admins { get; set; }
         public DbSet<Mark> Marks { get; set; }
         public DbSet<Parent> Parents { get; set; }
         public DbSet<Pupil> Pupils { get; set; }
         public DbSet<Subject> Subjects { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
-        public DbSet<Class> Classes { get; set; }        
+        public DbSet<Class> Classes { get; set; }
+        public DbSet<TeacherClass> TeacherClasses { get; set; }
     }
 }

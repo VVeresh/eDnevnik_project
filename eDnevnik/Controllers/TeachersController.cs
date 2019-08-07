@@ -1,4 +1,5 @@
 ﻿using eDnevnik.Models;
+using eDnevnik.Models.DTOs;
 using eDnevnik.Services;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,7 @@ namespace eDnevnik.Controllers
 
         // GET: api/teachers
         [Route("")]
-        [Authorize(Roles = "admins,teachers")]
+        [Authorize(Roles = "admins")]
         [HttpGet]
         public IQueryable<Teacher> GetClasses()
         {

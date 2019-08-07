@@ -12,5 +12,7 @@ namespace eDnevnik.Models
         public string PupilSurname { get; set; }
 
         public virtual ICollection<Mark> Marks { get; set; }
+
+        public virtual Class PupilClass { get; set; }
     }
 }

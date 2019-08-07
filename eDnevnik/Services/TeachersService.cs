@@ -1,4 +1,5 @@
 ﻿using eDnevnik.Models;
+using eDnevnik.Models.DTOs;
 using eDnevnik.Repositories;
 using System;
 using System.Collections.Generic;
@@ -21,6 +22,7 @@ namespace eDnevnik.Services
      
         public IEnumerable<Teacher> GetAllTeachers()
         {
+            //TeacherSubjectsDTO
             return db.TeachersRepository.Get();
         }
 

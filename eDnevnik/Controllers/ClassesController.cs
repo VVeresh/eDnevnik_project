@@ -71,41 +71,44 @@ namespace eDnevnik.Controllers
         }
 
         // PUT: api/classes/addPupil/5/2 
-        [Route("addPupil/{classYear}/{classNumber}")]
-        [ResponseType(typeof(Class))]
-        [HttpPut]
-        public IHttpActionResult AddPupil([FromUri] int classYear, [FromUri] int classNumber, [FromBody] Pupil pupil)
-        {
-            Class classWithAddedPupil = classesService.AddPupil(classYear, classNumber, pupil);
+        //[Route("addPupil/{classYear}/{classNumber}")]
+        //[Authorize(Roles = "admins")]
+        //[ResponseType(typeof(Class))]
+        //[HttpPut]
+        //public IHttpActionResult AddPupil([FromUri] int classYear, [FromUri] int classNumber, [FromBody] Pupil pupil)
+        //{
+        //    Class classWithAddedPupil = classesService.AddPupil(classYear, classNumber, pupil);
 
-            if (classWithAddedPupil == null)
-            {
-                return NotFound();
-            }
+        //    if (classWithAddedPupil == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            return Ok(classWithAddedPupil);
-        }
+        //    return Ok(classWithAddedPupil);
+        //}
 
-        // PUT: api/classes/addSubject/5/2 
-        [Route("addSubject/{classYear}/{classNumber}")]
-        [ResponseType(typeof(Class))]
-        [HttpPut]
-        public IHttpActionResult AddSubject([FromUri] int classYear, [FromUri] int classNumber, [FromBody] Subject subject)
-        {
-            Class classWithAddedPupil = classesService.AddSubject(classYear, classNumber, subject);
+        // PUT: api/classes/addTeacher/5/2 
+        //[Route("addTeacher/{classYear}/{classNumber}")]
+        //[Authorize(Roles = "admins")]
+        //[ResponseType(typeof(Class))]
+        //[HttpPut]
+        //public IHttpActionResult AddSubject([FromUri] int classYear, [FromUri] int classNumber, [FromBody] Teacher teacher)
+        //{
+        //    Class classWithAddedSubject = classesService.AddTeacher(classYear, classNumber, teacher);
 
-            if (classWithAddedPupil == null)
-            {
-                return NotFound();
-            }
+        //    if (classWithAddedSubject == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            return Ok(classWithAddedPupil);
-        }
+        //    return Ok(classWithAddedSubject);
+        //}
 
 
         // DELETE: api/classes/delete/5/2 
         [Route("delete/{classYear}/{classNumber}")]
         [ResponseType(typeof(Class))]
+        [Authorize(Roles = "admins")]
         [HttpDelete]
         public IHttpActionResult DeleteClass([FromUri] int classYear, [FromUri] int classNumber)
         {

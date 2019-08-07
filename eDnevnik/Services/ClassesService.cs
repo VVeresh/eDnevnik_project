@@ -64,64 +64,64 @@ namespace eDnevnik.Services
         //    return _class;
         //}
 
-        public Class AddPupil(int classYear, int classNumber, Pupil pupil)
-        {
-            Class _class = db.ClassesRepository.Get(x => (int)(x.ClassYear) == classYear && x.ClassNumber == classNumber).FirstOrDefault();
+        //public Class AddPupil(int classYear, int classNumber, Pupil pupil)
+        //{
+        //    Class _class = db.ClassesRepository.Get(x => (int)(x.ClassYear) == classYear && x.ClassNumber == classNumber).FirstOrDefault();
 
-            if (_class != null)
-            {
-                _class.Pupils.Add(pupil);
+        //    if (_class != null)
+        //    {
+        //        _class.Pupils.Add(pupil);
              
-                db.ClassesRepository.Update(_class);
-                db.Save();
-            }
+        //        db.ClassesRepository.Update(_class);
+        //        db.Save();
+        //    }
 
-            return _class;
-        }
+        //    return _class;
+        //}
 
-        public Class AddSubject(int classYear, int classNumber, Subject subject)
-        {
-            Class _class = db.ClassesRepository.Get(x => (int)(x.ClassYear) == classYear && x.ClassNumber == classNumber).FirstOrDefault();
+        //public Class AddTeacher(int classYear, int classNumber, Teacher teacher)
+        //{
+        //    Class _class = db.ClassesRepository.Get(x => (int)(x.ClassYear) == classYear && x.ClassNumber == classNumber).FirstOrDefault();
 
-            if (_class != null)
-            {
-                _class.Subjects.Add(subject);
+        //    if (_class != null)
+        //    {
+        //        _class.Teachers.Add(teacher);
 
-                db.ClassesRepository.Update(_class);
-                db.Save();
-            }
+        //        db.ClassesRepository.Update(_class);
+        //        db.Save();
+        //    }
 
-            return _class;
-        }
+        //    return _class;
+        //}
 
-        public Class RemovePupil(int classYear, int classNumber, Pupil pupil)
-        {
-            Class _class = db.ClassesRepository.Get(x => (int)(x.ClassYear) == classYear && x.ClassNumber == classNumber).FirstOrDefault();
+        //public Class RemovePupil(int classYear, int classNumber, Pupil pupil)
+        //{
+        //    Class _class = db.ClassesRepository.Get(x => (int)(x.ClassYear) == classYear && x.ClassNumber == classNumber).FirstOrDefault();
 
-            if (_class != null)
-            {
-                _class.Pupils.Remove(pupil);
+        //    if (_class != null)
+        //    {
+        //        _class.Pupils.Remove(pupil);
 
-                db.ClassesRepository.Update(_class);
-                db.Save();
-            }
+        //        db.ClassesRepository.Update(_class);
+        //        db.Save();
+        //    }
 
-            return _class;
-        }
+        //    return _class;
+        //}
 
-        public Class RemoveSubject(int classYear, int classNumber, Subject subject)
-        {
-            Class _class = db.ClassesRepository.Get(x => (int)(x.ClassYear) == classYear && x.ClassNumber == classNumber).FirstOrDefault();
+        //public Class RemoveTeacher(int classYear, int classNumber, Teacher teacher)
+        //{
+        //    Class _class = db.ClassesRepository.Get(x => (int)(x.ClassYear) == classYear && x.ClassNumber == classNumber).FirstOrDefault();
 
-            if (_class != null)
-            {
-                _class.Subjects.Remove(subject);
+        //    if (_class != null)
+        //    {
+        //        _class.Teachers.Remove(teacher);
 
-                db.ClassesRepository.Update(_class);
-                db.Save();
-            }
+        //        db.ClassesRepository.Update(_class);
+        //        db.Save();
+        //    }
 
-            return _class;
-        }
+        //    return _class;
+        //}
     }
 }
