@@ -28,7 +28,7 @@ namespace eDnevnik.Controllers
 
         // GET: api/Users/5
         [ResponseType(typeof(User))]
-        public IHttpActionResult GetUser(int id)
+        public IHttpActionResult GetUser(string id)
         {
             User user = db.UsersRepository.GetByID(id);
             if (user == null)
@@ -41,7 +41,7 @@ namespace eDnevnik.Controllers
 
         // PUT: api/Users/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutUser(int id, User user)
+        public IHttpActionResult PutUser(string id, User user)
         {
             if (!ModelState.IsValid)
             {
@@ -91,7 +91,7 @@ namespace eDnevnik.Controllers
 
         // DELETE: api/Users/5
         [ResponseType(typeof(User))]
-        public IHttpActionResult DeleteUser(int id)
+        public IHttpActionResult DeleteUser(string id)
         {
             db.UsersRepository.Delete(id);
             db.Save();
@@ -107,7 +107,7 @@ namespace eDnevnik.Controllers
             base.Dispose(disposing);
         }
 
-        private bool UserExists(int id)
+        private bool UserExists(string id)
         {
             return db.UsersRepository.GetByID(id) != null;
         }        

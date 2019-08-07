@@ -5,13 +5,15 @@ using System.Web;
 
 namespace eDnevnik.Models
 {
-    public enum Year { First = 1, Second, Third, Fourth, Fiveth, Sixth, Seventh, Eighth}
+    //public enum Year { First = 1, Second, Third, Fourth, Fifth, Sixth, Seventh, Eighth}
 
     public class Class
     {
         public int Id { get; set; }
 
-        public Year ClassYear { get; set; }
+        //public Year ClassYear { get; set; }
+
+        public int ClassYear { get; set; }
 
         public int ClassNumber { get; set; }
 

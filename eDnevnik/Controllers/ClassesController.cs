@@ -28,17 +28,20 @@ namespace eDnevnik.Controllers
             this.classesService = classesService;
         }
 
-        // GET: api/Classes
+        // GET: api/classes
         [Authorize(Roles = "admins")]
+        [HttpGet]
+        [Route("")]
         public IQueryable<Class> GetClasses()
         {
             return classesService.GetAllClasses().AsQueryable();
         }
 
-        // GET: api/Classes/5/2
+        // GET: api/classes/5/2
         [ResponseType(typeof(Class))]
         [Authorize(Roles = "admins")]
-        [Route("{int:classsYear}/{int:classNumber}")]
+        [Route("{classYear}/{classNumber}")]
+        [HttpGet]
         public IHttpActionResult GetUser([FromUri] int classYear, [FromUri] int classNumber)
         {
             Class _class = classesService.GetClass(classYear, classNumber);
@@ -50,10 +53,11 @@ namespace eDnevnik.Controllers
             return Ok(_class);
         }
 
-        // POST: api/Classes
+        // POST: api/classes
         [Route("")]
         [ResponseType(typeof(Class))]
         [Authorize(Roles = "admins")]
+        [HttpPost]
         public IHttpActionResult PostClass(Class _class)
         {
             if (!ModelState.IsValid)
@@ -66,10 +70,11 @@ namespace eDnevnik.Controllers
             return Created("", createdClass);
         }
 
-        // PUT: api/Classes/AddPupil/5/2 
-        [Route("AddPupil/{id:classYear}/{role:classNumber}")]
+        // PUT: api/classes/addPupil/5/2 
+        [Route("addPupil/{classYear}/{classNumber}")]
         [ResponseType(typeof(Class))]
-        public IHttpActionResult PutAddPupil([FromUri] int classYear, [FromUri] int classNumber, [FromBody] Pupil pupil)
+        [HttpPut]
+        public IHttpActionResult AddPupil([FromUri] int classYear, [FromUri] int classNumber, [FromBody] Pupil pupil)
         {
             Class classWithAddedPupil = classesService.AddPupil(classYear, classNumber, pupil);
 
@@ -81,10 +86,11 @@ namespace eDnevnik.Controllers
             return Ok(classWithAddedPupil);
         }
 
-        // PUT: api/Classes/AddSubject/5/2 
-        [Route("AddPupil/{id:classYear}/{role:classNumber}")]
+        // PUT: api/classes/addSubject/5/2 
+        [Route("addSubject/{classYear}/{classNumber}")]
         [ResponseType(typeof(Class))]
-        public IHttpActionResult PutAddPupil([FromUri] int classYear, [FromUri] int classNumber, [FromBody] Subject subject)
+        [HttpPut]
+        public IHttpActionResult AddSubject([FromUri] int classYear, [FromUri] int classNumber, [FromBody] Subject subject)
         {
             Class classWithAddedPupil = classesService.AddSubject(classYear, classNumber, subject);
 
@@ -97,9 +103,10 @@ namespace eDnevnik.Controllers
         }
 
 
-        // DELETE: api/Classes/Delete/5/2 
-        [Route("AddPupil/{id:classYear}/{role:classNumber}")]
+        // DELETE: api/classes/delete/5/2 
+        [Route("delete/{classYear}/{classNumber}")]
         [ResponseType(typeof(Class))]
+        [HttpDelete]
         public IHttpActionResult DeleteClass([FromUri] int classYear, [FromUri] int classNumber)
         {
             Class _class = classesService.DeleteClass(classYear, classNumber);
@@ -110,6 +117,11 @@ namespace eDnevnik.Controllers
             }
 
             return Ok(_class);
-        }        
+        }
+
+        public ClassesController()
+        {
+
+        }
     }
 }

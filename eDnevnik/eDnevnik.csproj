@@ -142,11 +142,12 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ClassesController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
-    <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Controllers\TeachersController.cs" />
+    <Compile Include="Models\UsersController.cs" />
     <Compile Include="Infrastructure\AuthContext.cs" />
+    <Compile Include="Infrastructure\DataSeedClass.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Class.cs" />
-    <Compile Include="Models\DataAccessContext.cs" />
     <Compile Include="Models\DTOs\ClassDTO.cs" />
     <Compile Include="Models\DTOs\ParentDTO.cs" />
     <Compile Include="Models\DTOs\PupilDTO.cs" />
@@ -162,11 +163,14 @@
     <Compile Include="Providers\SimpleAuthorizationServerProvider.cs" />
     <Compile Include="Repositories\AuthRepository.cs" />
     <Compile Include="Repositories\GenericRepository.cs" />
+    <Compile Include="Repositories\IAuthRepository.cs" />
     <Compile Include="Repositories\IGenericRepository.cs" />
     <Compile Include="Repositories\IUnitOfWork.cs" />
     <Compile Include="Repositories\UnitOfWork.cs" />
     <Compile Include="Services\ClassesService.cs" />
     <Compile Include="Services\IClassesService.cs" />
+    <Compile Include="Services\ITeachersService.cs" />
+    <Compile Include="Services\TeachersService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -196,7 +200,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>54461</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:54461/</IISUrl>
+          <IISUrl>http://localhost:4000/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

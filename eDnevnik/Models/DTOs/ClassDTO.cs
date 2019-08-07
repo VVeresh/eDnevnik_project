@@ -10,7 +10,7 @@ namespace eDnevnik.Models.DTOs
     {
         [Required]
         [Display(Name = "Class year")]
-        public Year ClassYear { get; set; }
+        public int ClassYear { get; set; }
 
         [Required]
         [Display(Name = "Class number")]

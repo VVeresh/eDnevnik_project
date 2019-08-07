@@ -10,7 +10,7 @@ using System.Web;
 
 namespace eDnevnik.Repositories
 {
-    public class AuthRepository : IDisposable
+    public class AuthRepository : IDisposable, IAuthRepository
     {
         private AuthContext _ctx;
 

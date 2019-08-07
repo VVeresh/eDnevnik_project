@@ -26,7 +26,7 @@ namespace eDnevnik.Services
 
         public Class DeleteClass(int classYear, int classNumber)
         {
-            Class _class = db.ClassesRepository.Get(x => (int)x.ClassYear == classYear && x.ClassNumber == classNumber).FirstOrDefault(); ;
+            Class _class = db.ClassesRepository.Get(x => (int)(x.ClassYear) == classYear && x.ClassNumber == classNumber).FirstOrDefault(); ;
 
             if (_class != null)
             {
@@ -44,7 +44,7 @@ namespace eDnevnik.Services
 
         public Class GetClass(int classYear, int classNumber)
         {
-            return db.ClassesRepository.Get(x => (int)x.ClassYear == classYear && x.ClassNumber == classNumber).FirstOrDefault();
+            return db.ClassesRepository.Get(x => (int)(x.ClassYear) == classYear && x.ClassNumber == classNumber).FirstOrDefault();
         }       
 
         //public Class UpdateClass(int id, Year classYear, int classNumber, Teacher HomeroomTeacher)
@@ -66,7 +66,7 @@ namespace eDnevnik.Services
 
         public Class AddPupil(int classYear, int classNumber, Pupil pupil)
         {
-            Class _class = db.ClassesRepository.Get(x => (int)x.ClassYear == classYear && x.ClassNumber == classNumber).FirstOrDefault();
+            Class _class = db.ClassesRepository.Get(x => (int)(x.ClassYear) == classYear && x.ClassNumber == classNumber).FirstOrDefault();
 
             if (_class != null)
             {
@@ -81,7 +81,7 @@ namespace eDnevnik.Services
 
         public Class AddSubject(int classYear, int classNumber, Subject subject)
         {
-            Class _class = db.ClassesRepository.Get(x => (int)x.ClassYear == classYear && x.ClassNumber == classNumber).FirstOrDefault();
+            Class _class = db.ClassesRepository.Get(x => (int)(x.ClassYear) == classYear && x.ClassNumber == classNumber).FirstOrDefault();
 
             if (_class != null)
             {
@@ -96,7 +96,7 @@ namespace eDnevnik.Services
 
         public Class RemovePupil(int classYear, int classNumber, Pupil pupil)
         {
-            Class _class = db.ClassesRepository.Get(x => (int)x.ClassYear == classYear && x.ClassNumber == classNumber).FirstOrDefault();
+            Class _class = db.ClassesRepository.Get(x => (int)(x.ClassYear) == classYear && x.ClassNumber == classNumber).FirstOrDefault();
 
             if (_class != null)
             {
@@ -111,7 +111,7 @@ namespace eDnevnik.Services
 
         public Class RemoveSubject(int classYear, int classNumber, Subject subject)
         {
-            Class _class = db.ClassesRepository.Get(x => (int)x.ClassYear == classYear && x.ClassNumber == classNumber).FirstOrDefault();
+            Class _class = db.ClassesRepository.Get(x => (int)(x.ClassYear) == classYear && x.ClassNumber == classNumber).FirstOrDefault();
 
             if (_class != null)
             {
